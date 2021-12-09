@@ -21,6 +21,10 @@ public class EditCustomer
 	WebElement txtCustomerName;
 	
 	@CacheLookup
+	@FindBy(how = How.NAME,using="rad1")
+	WebElement rdGender;
+	
+	@CacheLookup
 	@FindBy(how = How.ID_OR_NAME ,using="dob")
 	WebElement txtDob;
 	
@@ -30,6 +34,10 @@ public class EditCustomer
 		System.out.println("Customer info updated.");
 	}
 	
+	public void custGender(String cgender)
+	{
+		rdGender.click();		
+	}
 	public void EdidAdd(String cAdd)
 	{
 		txtDob.sendKeys(cAdd);
